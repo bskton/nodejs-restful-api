@@ -4,6 +4,8 @@ const https = require('https');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
 const _data = require('./lib/data');
+const handlers = require('./lib/handlers');
+const helpers = require('./lib/helpers.js');
 
 const config = require('./config');
 
@@ -50,7 +52,7 @@ const unifiedServer = (req, res) => {
     queryStringObject: queryStringObject,
     method: method,
     headers: headers,
-    payload: buffer
+    payload: helpers.parseJsonToObject(buffer)
   };
 
   chosenHandler(data, (statusCode, payload) => {
@@ -69,15 +71,7 @@ const unifiedServer = (req, res) => {
   });
 };
 
-const handlers = {
-  ping: (data, callback) => {
-  callback(200);
-  },
-  notFound: (data, callback) => {
-  callback(404);
-  }
-};
-
 const  router = {
-  ping: handlers.ping
+  ping: handlers.ping,
+  users: handlers.users
 };
