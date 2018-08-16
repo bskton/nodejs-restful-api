@@ -1,0 +1,4 @@
+{
+  "verbose": true,
+  "ignore": ["README.md", "docker/*", "docker-compose.yml"]
+  }
