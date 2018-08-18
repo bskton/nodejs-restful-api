@@ -1,4 +1,5 @@
 .data/**/*.*
+!.data/checks/
 !.data/tokens/
 !.data/users/
 !.gitkeep
