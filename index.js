@@ -3,11 +3,11 @@ const http = require('http');
 const https = require('https');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
+
 const _data = require('./lib/data');
+const config = require('./config');
 const handlers = require('./lib/handlers');
 const helpers = require('./lib/helpers.js');
-
-const config = require('./config');
 
 const httpServer = http.createServer((req, res) => {
   unifiedServer(req, res);
