@@ -12,3 +12,4 @@ services:
       - "3000:3000"
       - "3001:3001"
     command: ["nodemon", "index.js"]
+    user: "1000"
