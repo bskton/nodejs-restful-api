@@ -6,6 +6,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       - NODE_ENV=staging
+      # - NODE_DEBUG=server
     volumes:
       - ./:/app
     ports:
